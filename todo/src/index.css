@@ -1,0 +1,89 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.form{
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(27, 27, 114);
+  color: white ;
+}
+.list{
+  border: 1px solid white;
+  border-radius: 50px;
+background-color: rgb(142, 223, 223);
+color: black;
+margin-bottom: 1%;
+  font-size: 1.3rem;
+  list-style-type: none;
+}
+ul{
+  list-style-type: none;
+  margin-bottom: 11%;
+}
+.timeing{
+  width: 7%;
+ 
+}
+select{
+ height: 25px;
+}
+.bi{
+  font-size: 1.5rem;
+}
+
+#select{
+  height: 30px;
+}
+
+
+.red{
+  color: rgb(225, 223, 228);
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  padding: 1%;
+  margin-top: 2%;
+}
+
+.yellow{
+  color: rgb(2, 3, 3);
+  background-color: yellow;
+  border: none;
+  border-radius: 3px;
+  padding: 1%;
+  margin-top: 2%;
+}
+
+.green{
+  color: aliceblue;
+  background-color: rgb(13, 189, 37);
+  border: none;
+  border-radius: 3px;
+  padding: 1%;
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+form {
+    background-color: lightblue;
+  }
+}

@@ -1,0 +1,82 @@
+import React, { useEffect, useState } from 'react';
+
+// Form component to add or update todos
+function TodoForm({ add, editing, update, updateTodo }) {
+  const [todo, setTodo] = useState(""); // State to store the current todo text
+  const [time, setTime] = useState(""); // State to store the time associated with the todo
+  const [select, setSelect] = useState("pending"); // State to store the status of the todo
+
+  // Effect to update form fields when editing mode is activated
+  useEffect(() => {
+    if (editing) {
+      setTodo(update.todo);
+      setTime(update.time);
+      setSelect(update.select);
+    }
+  }, [editing, update]);
+
+  // Handler function to manage form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const todoObj = {
+      todo: todo ? todo : alert("enter todo"),
+      time: time,
+      select: select
+    };
+
+if (editing) {
+  updateTodo(todoObj, update.index);
+} else {
+  if (todo !== "") {
+    add(todoObj);
+  }
+}
+
+// Reset form fields after submission
+setTodo("");
+setTime("");
+setSelect("pending");
+  }
+
+  return (
+    <form className='form-inline' onSubmit={handleSubmit}>
+      <div>
+        <input
+          className='w-50'
+          id="exampleInputPassword1"
+          type='text'
+          placeholder='Enter Todo'
+          aria-invalid="true"
+          aria-describedby="first-name-error"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          required
+        />
+          
+        <input
+          type='number'
+          min={0}
+          onChange={(e) => setTime(e.target.value)}
+        />
+          
+        <select
+          className='select'
+          name="select"
+          id="select"
+          value={select}
+          onChange={(e) => setSelect(e.target.value)}
+        >
+          <option value="pending">Pending</option>
+          <option value="progress">In-Progress</option>
+          <option value="complete">Complete</option>
+        </select>
+          
+        <button type="submit" className="btn btn-success">
+          {editing ? "UPDATE" : "ADD"}
+        </button>
+      </div>
+    </form>
+  );
+}
+
+export default TodoForm;
